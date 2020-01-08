@@ -44,18 +44,12 @@ export class UserTableComponent extends React.Component {
     axios
       .get(url, config)
       .then(response => {
-        console.log("get student result", response);
+
       })
       .catch(err => console.log("err", err));
     localStorage.setItem("token", auth.info.idToken.jwtToken);
     return (
       <div style={style.token}>
-        {/* <div style={style.label}>Access Token</div>
-        <div>{auth.info.accessToken.jwtToken}</div>
-        <div style={style.label}>ID Token</div>
-        <div>{auth.info.idToken.jwtToken}</div>
-        <div style={style.label}>Refresh Token</div>
-        <div>{auth.info.refreshToken.token}</div> */}
         <MUTable
           props={this.props}
           setSelectedStudent={this.props.setSelectedStudent}
@@ -70,7 +64,7 @@ export class UserTableComponent extends React.Component {
     return (
       <div style={style.page}>
         <div style={style.layout}>
-          <div style={style.heading}>User Result</div>
+          <div style={style.heading}>Student Test Result</div>
 
           {auth.isSignedIn === state.AUTH_SUCCESS
             ? this.renderAuthInfo(auth)

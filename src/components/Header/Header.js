@@ -31,7 +31,6 @@ export default class HeaderComponent extends React.Component {
         <Toolbar>
           <ToolbarGroup>
             <IconButton
-              href="https://github.com/dbroadhurst/aws-cognito-react"
               target="_blank"
             >
               <img alt="github" width="28" src="GitHub-Mark-120px-plus.png" />

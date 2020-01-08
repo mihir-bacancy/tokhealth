@@ -35,16 +35,9 @@ export class ProtectedComponent extends React.Component {
   }
 
   renderAuthInfo(auth) {
-    console.log("auth", auth.info.idToken.jwtToken)
     localStorage.setItem("token", auth.info.idToken.jwtToken)
     return (
       <div style={style.token}>
-        {/* <div style={style.label}>Access Token</div>
-        <div>{auth.info.accessToken.jwtToken}</div>
-        <div style={style.label}>ID Token</div>
-        <div>{auth.info.idToken.jwtToken}</div>
-        <div style={style.label}>Refresh Token</div>
-        <div>{auth.info.refreshToken.token}</div> */}
         <MUTable setSelectedStudent={this.props.setSelectedStudent} />
       </div>
     )
@@ -52,11 +45,10 @@ export class ProtectedComponent extends React.Component {
 
   render() {
     const { auth } = this.props
-
     return (
       <div style={style.page}>
         <div style={style.layout}>
-          <div style={style.heading}>Protected Page</div>
+          <div style={style.heading}>Students</div>
 
           {auth.isSignedIn === state.AUTH_SUCCESS
             ? this.renderAuthInfo(auth)

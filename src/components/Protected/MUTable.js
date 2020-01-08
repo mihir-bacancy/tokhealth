@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import API from "./../Utils/API";
 // import {
 //     setSelectedStudent
@@ -8,17 +7,14 @@ import { Link } from "react-router-dom";
 // Import React Table
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import axios from "axios";
 
-import EventEmitter from "../../client";
-console.log("EventEmitter", EventEmitter);
-const myEmitter = new EventEmitter();
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      selected: null
+      selected: null,
+      loading: true
     };
     this.renderEditable = this.renderEditable.bind(this);
   }
@@ -26,7 +22,7 @@ class App extends React.Component {
   async componentWillMount() {
     try {
       let res = await API.get("/students");
-      this.setState({ data: res.data });
+      this.setState({ data: res.data, loading: false });
     } catch (e) {
       console.log(`😱 Axios request failed: ${e}`);
     }
@@ -67,19 +63,16 @@ class App extends React.Component {
     );
   }
   toggleSelectOne(obj) {
-    console.log("myEmitter");
-    myEmitter.emit("PASS_DATA", { name: "mihir" });
     this.setState({
       selected: obj
     });
   }
   render() {
     const { data } = this.state;
-    // const data =
-
     return (
       <div>
         <ReactTable
+          loading={this.state.loading}
           data={data}
           defaultSorted={[
             {
@@ -112,7 +105,6 @@ class App extends React.Component {
             {
               Header: "Score Average",
               accessor: "score_average"
-              // Cell: this.renderEditable
             },
             {
               Header: "Subject Count",

@@ -9,10 +9,10 @@ class Auth extends React.Component {
 
   componentWillMount() {
     config.config.set({
-      region: "ap-south-1",
-      IdentityPoolId: "ap-south-1:a7c18cc5-6b0f-4669-88e3-ffce17fb4c35",
-      UserPoolId: "ap-south-1_Zwb0m5ECh",
-      ClientId: "3jh4n98j76h9lrp61o4c956chj"
+      region: "----Add your creds----",
+      IdentityPoolId: "-------Add your creds-----",
+      UserPoolId: "-------Add your creds-----",
+      ClientId: "-------Add your creds-----"
     });
     this.props.getUser();
   }

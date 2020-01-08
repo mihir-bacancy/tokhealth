@@ -57,8 +57,8 @@ class App extends React.Component {
                   auth.isSignedIn === state.AUTH_SUCCESS ? (
                     <Redirect to="/users" />
                   ) : (
-                    <Redirect to="/landing" />
-                  )
+                      <Redirect to="/" />
+                    )
                 }
               />
             </Switch>

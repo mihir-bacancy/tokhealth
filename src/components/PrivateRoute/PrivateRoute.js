@@ -18,8 +18,8 @@ class PrivateRoute extends React.Component {
           return auth.isSignedIn !== state.AUTH_FAIL ? (
             <this.props.component />
           ) : (
-            <Redirect to="/landing" />
-          )
+              <Redirect to="/" />
+            )
         }}
       />
     )
