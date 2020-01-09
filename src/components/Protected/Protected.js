@@ -12,8 +12,8 @@ const style = {
   },
   heading: {
     textAlign: 'center',
-    fontSize: '48px',
-    margin: '64px'
+    fontSize: '28px',
+    margin: '24px'
   },
   label: {
     fontSize: '24px',

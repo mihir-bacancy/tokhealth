@@ -1,3 +1,4 @@
+
 import React from "react";
 import PropTypes from "prop-types";
 import MUTable from "./MUTable";
@@ -6,28 +7,28 @@ import axios from "axios";
 const style = {
   page: {},
   layout: {
-    display: "flex",
-    flexFlow: "column",
-    alignItems: "center"
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'center',
+    background: '#fff'
   },
   heading: {
-    textAlign: "center",
-    fontSize: "48px",
-    margin: "64px"
+    textAlign: 'center',
+    fontSize: '28px',
+    margin: '24px'
   },
   label: {
-    fontSize: "24px",
-    margin: "8px 0",
-    color: "rgb(0,64,128)"
+    fontSize: '24px',
+    margin: '8px 0',
+    color: 'rgb(0,64,128)'
   },
   token: {
-    overflow: "auto",
-    overflowWrap: "break-word",
-    fontSize: "16px",
-    width: "90vw"
+    overflow: 'auto',
+    overflowWrap: 'break-word',
+    fontSize: '16px',
+    width: '90vw'
   }
-};
-
+}
 export class UserTableComponent extends React.Component {
   static propTypes = {
     isSignedIn: PropTypes.string,
