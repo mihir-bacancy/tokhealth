@@ -23,11 +23,8 @@ class App extends React.Component {
             console.log(`😱 Axios request failed: ${e}`);
         }
     }
-
-
     render() {
         const { data } = this.state;
-
         return (
             <div>
                 <ReactTable

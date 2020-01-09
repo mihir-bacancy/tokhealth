@@ -1,12 +1,25 @@
 body {
-  background-color: rgb(192, 192, 192);
+  background-color: #fff
 }
-
 .app {
   display: flex;
   justify-content: center;
 }
-
 .app .screen {
   width: 1280px;
 }
+.headerstddet{
+  display: flex;
+}
+.rt-th{
+  background-color: #494949;
+  color: #fff;
+  border-right:1px solid  #fff !important;
+}
+.rt-td{
+  border-right: 1px solid #ddd !important;
+  text-align: center !important;
+}
+
+.logo_div{display: flex; align-items: center;}
+.logo_text{margin: 20px auto auto 0px !important;}

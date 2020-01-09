@@ -8,7 +8,28 @@ import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router-dom'
 
 import { state } from 'aws-cognito-redux-saga'
+import signout from "../images/signout.png";
+import hexagon from "../images/hexagon.png";
 
+const style = {
+  signoutbtn: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  signout: {
+    maxWidth: '30px',
+    margin: '10px'
+  },
+  test: {
+    background:'linear-gradient( #283eb6, #1877c7)',
+    color: '#fff'
+  },
+  textwhite: {
+    color: '#fff'
+  }  
+  
+}
 export default class HeaderComponent extends React.Component {
   static propTypes = {
     isSignedIn: PropTypes.string,
@@ -28,16 +49,16 @@ export default class HeaderComponent extends React.Component {
 
     return (
       <div>
-        <Toolbar>
-          <ToolbarGroup>
-            <IconButton
+         <Toolbar  style={style.test}>
+          <ToolbarGroup className="logo_div">
+            <IconButton className="logo_icon"
               target="_blank"
             >
-              <img alt="github" width="28" src="GitHub-Mark-120px-plus.png" />
+              <img src={hexagon} style={style.signout} />  
             </IconButton>
 
-            <FlatButton
-              label="aws-cognito-react"
+            <FlatButton className="logo_text"
+              label="Tok Health Challenge" style={style.textwhite}
               containerElement={<Link to="/" />}
             />
           </ToolbarGroup>
@@ -46,15 +67,20 @@ export default class HeaderComponent extends React.Component {
             {auth.isSignedIn !== state.AUTH_SUCCESS ? (
               <FlatButton
                 containerElement={<Link to="/signin" />}
-                label="Sign Up / Sign In"
+                label="Sign Up / Sign In" style={style.textwhite}
                 onClick={this.signIn}
               />
             ) : (
-                <div>
+              <div>                 
+              {/* <FlatButton label="Sign Out" onClick={this.signOut} /> */}
+                <div style={style.signoutbtn}>
                   {auth.info.username}
-                  <FlatButton label="Sign Out" onClick={this.signOut} />
-
+                  <img src={signout} onClick={this.signOut} style={style.signout} />  
+                </div>              
+                <div>
+                
                 </div>
+            </div>
 
               )}
           </ToolbarGroup>
