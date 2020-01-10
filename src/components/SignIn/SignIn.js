@@ -23,7 +23,7 @@ const email = value =>
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      height: 'calc(100vh - 56px)'
+      height: '100%'
     },
     title: {
       fontSize: '32px',

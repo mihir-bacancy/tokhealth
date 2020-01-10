@@ -12,16 +12,7 @@ import signout from "../images/signout.png";
 import hexagon from "../images/hexagon.png";
 
 const style = {
-  signoutbtn: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  signout: {
-    maxWidth: '30px',
-    margin: '10px'
-  },
-  test: {
+   headerbg: {
     background:'linear-gradient( #283eb6, #1877c7)',
     color: '#fff'
   },
@@ -49,23 +40,23 @@ export default class HeaderComponent extends React.Component {
 
     return (
       <div>
-         <Toolbar  style={style.test}>
+         <Toolbar  style={style.headerbg} className="c_header">
           <ToolbarGroup className="logo_div">
-            <IconButton className="logo_icon"
+            {/* <IconButton className="logo_icon"
               target="_blank"
             >
               <img src={hexagon} style={style.signout} />  
-            </IconButton>
-
+            </IconButton> */}
+            <img src={hexagon}  className="logo_icon" />  
             <FlatButton className="logo_text"
               label="Tok Health Challenge" style={style.textwhite}
               containerElement={<Link to="/" />}
             />
           </ToolbarGroup>
 
-          <ToolbarGroup>
+          <ToolbarGroup className="userdet">
             {auth.isSignedIn !== state.AUTH_SUCCESS ? (
-              <FlatButton
+              <FlatButton className="test"
                 containerElement={<Link to="/signin" />}
                 label="Sign Up / Sign In" style={style.textwhite}
                 onClick={this.signIn}
@@ -73,9 +64,9 @@ export default class HeaderComponent extends React.Component {
             ) : (
               <div>                 
               {/* <FlatButton label="Sign Out" onClick={this.signOut} /> */}
-                <div style={style.signoutbtn}>
-                  {auth.info.username}
-                  <img src={signout} onClick={this.signOut} style={style.signout} />  
+                <div style={style.signoutbtn} className="signoutbtndiv">
+                  <span>{auth.info.username}</span>
+                  <img src={signout} onClick={this.signOut} className="signoutbtn" />  
                 </div>              
                 <div>
                 

@@ -48,38 +48,31 @@ export default class SelectedStudentComponent extends React.Component {
             {auth.isSignedIn !== state.AUTH_SUCCESS ? null : <div></div>}
           </ToolbarGroup>
         </Toolbar>
-        <div
-          style={{
-            padding: "0px 24px",
-            background:' #1877c7',
-            display: "flex",
-            justifyContent: "flex-end",
-            color: '#fff'
-          }}
-        >{
+        <div className="stdrsltdet" >{
             auth.isSignedIn !== state.AUTH_SUCCESS ? null :
-              <table style={{ border: 1, width: 100 }} className="border">
-                <tr>
-                  <td style={{ display: "flex" ,  }}>
-                      <p style={{ marginRight: "10px" }}> Students </p>
-                      <p> 20 </p>
-                  </td>
-                  <td>:</td>
+              <table style={{ border: 1}} className="border">
+                <tr className="stdtable">
+                  <td style={{ display: "flex" ,   }}>
+                      <tr>
+                          <td> Students : </td>
+                          <td> <strong> 20 </strong></td>
+                      </tr>
+                  </td>                  
                   <td>
-                    <table className="border" style={{ display: "flex" }}>
+                    <table className="border" className="stdtablemore">
                       <tr>
-                        <td>Selected</td>
-                        <td>Bacancy</td>
+                        <td>Selected :</td>
+                        <td><strong> Bacancy </strong></td>
                       </tr>
-                      <tr>|</tr>
+                      
                       <tr>
-                        <td>Subject</td>
-                        <td>CSS</td>
+                        <td>Subject :</td>
+                        <td><strong> CSS </strong></td>
                       </tr>
-                      <tr>|</tr>
+                      
                       <tr>
-                        <td>Average</td>
-                        <td>100</td>
+                        <td>Average :</td>
+                        <td><strong>100</strong></td>
                       </tr>
                     </table>
                   </td>

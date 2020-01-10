@@ -10,6 +10,7 @@ import { TextField } from 'redux-form-material-ui'
 import { RaisedButton, Paper } from 'material-ui'
 
 import { state } from 'aws-cognito-redux-saga'
+import hexagon from "../images/hexagon.png";
 
 const required = value => (value ? undefined : 'Required')
 const email = value =>
@@ -20,14 +21,14 @@ const minLength = value => (value.length >= 8 ? undefined : 'Min Length 8')
 
 const style = {
   paper: {
-    padding: '16px'
+    padding: '0'
   },
   layout: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 'calc(100vh - 56px)'
+    height: '100%'
   },
   title: {
     fontSize: '32px',
@@ -54,7 +55,32 @@ const style = {
     margin: '8px 32px',
     fontSize: '24px',
     textAlign: 'center'
-  }
+  },
+  test: {
+    height: '100px',
+    background: 'linear-gradient(to right, #5c3296 0%, #ac2ca3 100%)',
+    width: '100%'
+ },  
+ h1:{
+   color: '#fff',
+   fontSize: '20px',
+   display: 'flex',
+   alignItems: 'end',
+   justifyContent: 'center',
+   marginTop: '0px'
+ },
+ colortext:{
+  background:'linear-gradient(to right, #5f309a 0%, #5b3197 100%)',
+  height: '100%',
+  margin: '0px',
+  color: '#fff',
+  borderRadius:'5px'
+},
+ heximgdiv:{
+  display:'flex',
+  justifyContent: 'center',
+  margin: '10px auto 0px auto'
+},
 }
 
 class SignUp extends Component {
@@ -80,8 +106,13 @@ class SignUp extends Component {
       <div style={style.layout}>
         <Paper style={style.paper} zDepth={5}>
           <form style={style.form}>
-            <div style={style.title}>Sign Up</div>
-
+            {/* <div style={style.title}>Sign Up</div> */}
+            <div style={style.test}>
+               <div style={style.heximgdiv}>
+                   <img src={hexagon} alt="image" style={style.hexaimg} />
+               </div>
+               <h1 style={style.h1}>Your Brand Here</h1>
+            </div>
             <Field
               style={style.field}
               name="email"
@@ -116,7 +147,7 @@ class SignUp extends Component {
               onClick={handleSubmit(this.signUp)}
               primary
             >
-              Sign Up
+              <p style={style.colortext}>Sign Up</p>
             </RaisedButton>
           </form>
         </Paper>
