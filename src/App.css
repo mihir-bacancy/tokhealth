@@ -6,7 +6,7 @@ body {
   justify-content: center;
 }
 .app .screen {
-  width: 1280px;
+  width: 100%;
 }
 .headerstddet{
   display: flex;
@@ -20,6 +20,52 @@ body {
   border-right: 1px solid #ddd !important;
   text-align: center !important;
 }
+tr{margin-right: 15px;}
+tr:last-child{margin-right: 0px;}
+/* .logo_div{display: flex; align-items: center;} */
+.logo_text{margin: 0 !important;}
+.c_header{display: flex; justify-content: space-between; padding-top: 35px !important;
+  position: relative; padding-bottom: 35px !important;}
+.logo_div{display: flex !important;justify-content: flex-start !important;}
+.stdrsltdet{display: flex;  justify-content: flex-end; align-items: center; padding: 10px 25px;
+     background: #1877c7; color: #fff;}
+.stdtable {display: flex; align-items: center;}
+.stdtablemore{display: flex;align-items: center; flex-wrap: wrap;}
+.signoutbtn{    max-width: 30px;  margin-left: 20px;;}
 
-.logo_div{display: flex; align-items: center;}
-.logo_text{margin: 20px auto auto 0px !important;}
+.signoutbtn{    position: absolute;
+  top: 20px;
+  right: 30px;
+  max-width: 30px;}
+.signoutbtndiv{padding-right: 50px;}
+.userdet{position: initial !important;}
+.test{margin: 0 !important;}
+.test>div{
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0;
+  height: auto;
+  line-height: normal;
+  text-align: center;
+  background: #fff;
+  color: #444;
+  padding: 10px 0px;
+  border-radius: 50px;
+  z-index:11;
+}
+
+
+
+@media (max-width:767px){
+  .c_header{display: block !important;padding: 30px 20px 10px 30px !important;  height: 100% !important;}
+  .stdrsltdet{display: block;}
+  .stdtable{display: block}
+  .logo_div{margin-bottom: 20px;}  
+  .signoutbtndiv { padding-right: 0;}
+}
+
+@media (max-width:380px){
+.signoutbtn{    right: 15px;}
+
+}
